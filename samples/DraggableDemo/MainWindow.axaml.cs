@@ -11,6 +11,8 @@ namespace DraggableDemo
     {
         public IList<Item> Items { get; set; }
 
+        public IList<string> ManyItems { get; }
+
         public IList<Tile> Tiles { get; set; }
 
         public MainWindow()
@@ -28,6 +30,13 @@ namespace DraggableDemo
                 new () { Title = "Item7", X = 250, Y = 120 },
                 new () { Title = "Item8", X = 300, Y = 150 }
             };
+            
+            ManyItems = new List<string>();
+            for (int i = 0; i < 1000; i++)
+            {
+                ManyItems.Add($"Item {i+1:0,000} / {1000:0,000}");
+            }
+            
 
             Tiles = new ObservableCollection<Tile>()
             {
